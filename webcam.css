@@ -1,0 +1,26 @@
+h2 {
+  font-family: monospace;
+  text-align: center;
+  font-size: 22px;
+}
+
+#container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#videoElement {
+  padding: 0%;
+  width: 720px;
+  height: auto;
+  background-color: lightgrey;
+  border: 7px solid green;
+}
+/*# sourceMappingURL=webcam.css.map */
