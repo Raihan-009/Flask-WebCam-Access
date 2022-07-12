@@ -1,1 +1,4 @@
 *.css.map
+env/
+*.scss
+breakpoint.css

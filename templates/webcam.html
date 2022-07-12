@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebCam Access</title>
+    <link rel="stylesheet" href="../static/style/webcam.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+    <h2>Streaming Web Camera</h2>
+    <div id="container">
+        <video autoplay="'true" id="videoElement">
+
+        </video>
+    </div>
+    <div class="btn-container">
+		<button class="btn btn-success" onclick="strat_cam()">Start</button>
+        <button class="btn btn-outline-info" onClick="window.location.reload();">Refresh</button>
+        <button class="btn btn-danger" onclick="stop_cam()">Stop</button>
+		</div>
+    <script>
+        let video = document.querySelector('#videoElement');
+
+        function strat_cam(){
+            if (navigator.mediaDevices.getUserMedia){
+            navigator.mediaDevices.getUserMedia({video:true})
+                .then(function(stream){
+                    video.srcObject = stream;
+                })
+                .catch(function(error){
+                    console.log('Something gone wrong! :(')
+                })
+            }else{
+                console.log("Something went wrong! :(")
+            }
+        }
+
+        function stop_cam(){
+            video.pause()
+        }
+        
+    </script>
+</body>
+</html>
